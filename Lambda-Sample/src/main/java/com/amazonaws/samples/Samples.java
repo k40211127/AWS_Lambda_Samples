@@ -52,13 +52,13 @@ public class Samples implements Runnable{
 	
 	public  void invoke() {		
 			
-//        System.out.println(Thread.currentThread().getName() + "�Q�եΤF        ");
+//        System.out.println(Thread.currentThread().getName() + "³Q½Õ¥Î¤F        ");
         
 	    // (1) Define the AWS Region in which the function is to be invoked
         Regions region = Regions.fromName("us-east-1");
         BasicAWSCredentials credentials = new 
-                BasicAWSCredentials("AKIAI6MG5IKPCK4M5ASA", 
-                        "Va0trVvrWUGKk5lVHahjdPKJIyK5ClPVXLSdOn5F");
+                BasicAWSCredentials("AWS ID", 
+                        "AWS KEY");
         
         // (2) Modify to leverage credentials
         AWSLambdaClientBuilder builder = AWSLambdaClientBuilder.standard()
@@ -70,8 +70,8 @@ public class Samples implements Runnable{
         // (4) Create an InvokeRequest with required parameters
         // String function_input = "Rui-Wen";
         InvokeRequest req = new InvokeRequest()
-                                   .withFunctionName("MyFunction2018")
-                                   .withPayload(this.ThreadCount); // optional       
+                                   .withFunctionName("MyFunction2018") // your functions name
+                                   .withPayload(this.ThreadCount); // optional // pay any meassage       
         
         // (5) Invoke the function and capture response
         InvokeResult res = client.invoke(req);	       	        
